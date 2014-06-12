@@ -6,11 +6,11 @@ import javax.persistence.*;
 @Table(name = "people")
 @NamedQueries({
     @NamedQuery(
-        name = "com.example.helloworld.core.Person.findAll",
+        name = "Person.findAll",
         query = "SELECT p FROM Person p"
     ),
     @NamedQuery(
-        name = "com.example.helloworld.core.Person.findById",
+        name = "Person.findById",
         query = "SELECT p FROM Person p WHERE p.id = :id"
     )
 })

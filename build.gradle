@@ -1,28 +1,44 @@
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'groovy'
-apply plugin: 'application'
-
-group = 'io.dropwizard'
-version = '0.7.0'
-
-description = """Dropwizard Example Application"""
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
-mainClassName = "com.example.helloworld.HelloWorldApplication"
-
-configurations.all {
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            url 'http://repo.jfrog.org/artifactory/gradle-plugins'
+        }
+    }
+    dependencies {
+        classpath "net.saliman:gradle-cobertura-plugin:1.1.0"
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:2.0.16'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:0.8'
+    }
 }
+
+apply plugin: 'cobertura'
+//apply plugin: 'codenarc'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'shadow'
+
+version=currentVersion
+group=currentGroup
+
+// Run code narc before the test phase begins
+//test.dependsOn codenarcMain
 
 repositories {
     mavenLocal()
     mavenCentral()
-     // maven { url "http://oss.sonatype.org/content/repositories/snapshots" }
-     // maven { url "http://repo.maven.apache.org/maven2" }
+    // Spock snapshots are available from the Sonatype OSS snapshot repository
+    maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
 }
+
 dependencies {
+    groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+
+    compile "com.sun.jersey:jersey-client:1.18.1"
+
+
+
     compile group: 'io.dropwizard', name: 'dropwizard-core', version:'0.7.0'
     compile group: 'io.dropwizard', name: 'dropwizard-auth', version:'0.7.0'
     compile group: 'io.dropwizard', name: 'dropwizard-assets', version:'0.7.0'
@@ -31,10 +47,84 @@ dependencies {
     compile group: 'io.dropwizard', name: 'dropwizard-migrations', version:'0.7.0'
     compile group: 'io.dropwizard', name: 'dropwizard-views-freemarker', version:'0.7.0'
     compile group: 'io.dropwizard', name: 'dropwizard-views-mustache', version:'0.7.0'
+
     compile group: 'com.h2database', name: 'h2', version:'1.3.175'
     testCompile group: 'io.dropwizard', name: 'dropwizard-testing', version:'0.7.0'
+
 }
-run {
-    args 'server', 'example.yml'
+//run {
+//    args 'server', 'example.yml'
+//}
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': "${mainClass}"
+        attributes 'Built-Date': new Date() //now
+        attributes 'Built-By': System.getProperty('user.name')
+        attributes 'Build-Jdk': System.getProperty('java.version')
+        attributes 'Implementation-Title': project.name
+        attributes 'Implementation-Version': project.version
+        attributes 'Implementation-Vendor-Id': project.group
+    }
 }
 
+cobertura {
+    coverageFormats = ['xml', 'html']
+    coverageIncludes = ['**/*.java', '**/*.groovy']
+    coverageSourceDirs = [sourceSets.main.allSource.srcDirs]
+}
+
+//codenarc {
+//    configFile = rootProject.file('codenarcrule.groovy')
+//    reportFormat = System.properties['codeNarcOutput'] ?: 'html'
+//}
+
+// import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
+// import com.github.jengelman.gradle.plugins.shadow.transformers.AppendingTransformer
+// import com.github.jengelman.gradle.plugins.shadow.transformers.ManifestResourceTransformer
+import com.github.jengelman.gradle.plugins.shadow.transformers.ServiceFileTransformer
+shadow {
+    baseName 'dropwizard-example'
+    artifactAttached false
+    destinationDir "${project.buildDir}/distributions"
+
+    transformer(ServiceFileTransformer)
+
+    // transformer(ManifestResourceTransformer) {
+    //     attributes 'Main-Class': mainClass
+    //     attributes 'Test-Entry': 'PASSED'
+    // }
+    // transformer(AppendingTransformer) {
+    //     resource = 'META-INF/spring.handlers'
+    // }
+    // transformer(AppendingTransformer) {
+    //     resource = 'META-INF/spring.schemas'
+    // }
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+}
+
+task run(dependsOn: 'shadowJar', group: 'dropwizard',  description: "Run service using dev configuration") << {
+    // Grab any dw. properties that are specified on the command line and pass to the Java process (i.e. dw.http.port=8080)
+    def props = project.ext.properties.findAll { it.key.startsWith('dw') }
+    javaexec {
+        main = '-jar'
+        args = ["${shadow.shadowJar.getPath()}", 'server', 'example.yml']
+        systemProperties = props
+    }
+}
+
+task migrate(dependsOn: 'shadowJar', group: 'dropwizard', description: "Run migrations using the dev configuration") << {
+    javaexec {
+        main = '-jar'
+        args = ["${shadow.shadowJar.getPath()}", 'db', 'migrate', 'example.yml']
+    }
+}
+
+task dropAll(dependsOn: 'shadowJar', group: 'dropwizard',  description: "Run drop-all database command") << {
+    javaexec {
+        main = '-jar'
+        args = ["${shadow.shadowJar.getPath()}", 'db', 'drop-all', 'example.yml', '--confirm-delete-everything']
+    }
+}

@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae153c6b-a4de-4b51-8b13-fd217d30e218" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/HelloWorldApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/resources/TasksResource.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/HelloWorldConfiguration.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/HelloWorldConfiguration.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/auth/ExampleAuthenticator.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/auth/ExampleAuthenticator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/cli/RenderCommand.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/cli/RenderCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/core/Person.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/core/Person.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/core/Saying.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/core/Saying.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/core/Template.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/core/Template.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/core/User.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/core/User.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/db/PersonDAO.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/db/PersonDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/health/TemplateHealthCheck.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/health/TemplateHealthCheck.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/resources/HelloWorldResource.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/resources/HelloWorldResource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/resources/PeopleResource.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/resources/PeopleResource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/resources/PersonResource.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/resources/PersonResource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/resources/ProtectedResource.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/resources/ProtectedResource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/resources/ViewResource.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/resources/ViewResource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/example/helloworld/views/PersonView.java" afterPath="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/views/PersonView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+    </list>
+    <ignored path="dropwizard-example.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="dropwizard-example" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45628998" vertical-offset="1436" max-vertical-offset="2040">
+              <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelloWorldApplication.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/groovy/com/example/helloworld/HelloWorldApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1020">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="tasksExpandState">
+      <map>
+        <entry key="" value="true" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="dropwizard-example" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="dropwizard-example" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Do you know who knows?" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="knows" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'test'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generate Cobertura coverage reports after running tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cobertura" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'test:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run migrations using the dev configuration" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="migrate" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'main'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run drop-all database command" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dropAll" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Instrument code for Cobertura coverage reports" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="instrument" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Copies signed libraries to a specified output folder for later packaging." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="copySignedLibs" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run service using dev configuration" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="run" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Combines all classpath resources into a single jar." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="shadowJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the test Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Groovydoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="groovydoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'main:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'test:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the main Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'main:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the 'archives' artifacts into the local Maven repository." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="install" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="2805185960000" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-core/0.7.0/dropwizard-core-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-testing/0.7.0/dropwizard-testing-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-hibernate/0.7.0/dropwizard-hibernate-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-migrations/0.7.0/dropwizard-migrations-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-auth/0.7.0/dropwizard-auth-0.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.dropwizard/dropwizard-client/0.7.0/d023d89ebc1a2cfad366056e66c115fb061acf2/dropwizard-client-0.7.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.dropwizard/dropwizard-client/0.7.0/348bd4db9e8233e629545557757e149e40ced999/dropwizard-client-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-views/0.7.0/dropwizard-views-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/h2database/h2/1.3.170/h2-1.3.170.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.3.2/350602be8a822d0eac07f5e0c19bc2d3ec42d05d/groovy-all-2.3.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.3.2/6c8168618882d2ad2a6208c71f948b42b55b2e5e/groovy-all-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/slf4j/log4j-over-slf4j/1.7.6/log4j-over-slf4j-1.7.6.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.3.0/jackson-annotations-2.3.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/google/guava/guava/16.0.1/guava-16.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.jar" />
+                            <option value="$MAVEN_REPOSITORY$/joda-time/joda-time/2.3/joda-time-2.3.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-util/0.7.0/dropwizard-util-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.3.2/jackson-core-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.3.2/jackson-databind-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-guava/2.3.2/jackson-datatype-guava-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-afterburner/2.3.2/jackson-module-afterburner-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.3.2/jackson-datatype-joda-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar" />
+                            <option value="$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-jackson/0.7.0/dropwizard-jackson-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.1.1.GA/jboss-logging-3.1.1.GA.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/5.0.2.Final/hibernate-validator-5.0.2.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/javax/el/javax.el-api/2.2.5/javax.el-api-2.2.5.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/glassfish/web/javax.el/2.2.6/javax.el-2.2.6.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-validation/0.7.0/dropwizard-validation-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.2/jackson-dataformat-yaml-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-configuration/0.7.0/dropwizard-configuration-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-core/3.0.1/metrics-core-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-logback/3.0.1/metrics-logback-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/slf4j/jul-to-slf4j/1.7.6/jul-to-slf4j-1.7.6.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-util/9.0.7.v20131107/jetty-util-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-logging/0.7.0/dropwizard-logging-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/orbit/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-http/9.0.7.v20131107/jetty-http-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-io/9.0.7.v20131107/jetty-io-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.0.7.v20131107/jetty-server-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-lifecycle/0.7.0/dropwizard-lifecycle-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-metrics/0.7.0/dropwizard-metrics-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/sun/jersey/jersey-core/1.18.1/jersey-core-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/sun/jersey/jersey-server/1.18.1/jersey-server-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/sun/jersey/jersey-servlet/1.18.1/jersey-servlet-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-annotation/3.0.1/metrics-annotation-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-jersey/3.0.1/metrics-jersey-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.3.2/jackson-jaxrs-base-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.3.2/jackson-module-jaxb-annotations-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.3.2/jackson-jaxrs-json-provider-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-jersey/0.7.0/dropwizard-jersey-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-servlets/0.7.0/dropwizard-servlets-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-jetty9/3.0.1/metrics-jetty9-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-security/9.0.7.v20131107/jetty-security-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-servlet/9.0.7.v20131107/jetty-servlet-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-continuation/9.0.7.v20131107/jetty-continuation-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-servlets/9.0.7.v20131107/jetty-servlets-9.0.7.v20131107.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-jetty/0.7.0/dropwizard-jetty-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-jvm/3.0.1/metrics-jvm-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-healthchecks/3.0.1/metrics-healthchecks-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-json/3.0.1/metrics-json-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/codahale/metrics/metrics-servlets/3.0.1/metrics-servlets-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/net/sourceforge/argparse4j/argparse4j/0.4.3/argparse4j-0.4.3.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/eclipse/jetty/toolchain/setuid/jetty-setuid-java/1.0.2/jetty-setuid-java-1.0.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/sun/jersey/jersey-client/1.18.1/jersey-client-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/sun/jersey/jersey-test-framework/jersey-test-framework-core/1.18.1/jersey-test-framework-core-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/sun/jersey/jersey-test-framework/jersey-test-framework-inmemory/1.18.1/jersey-test-framework-inmemory-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" />
+                            <option value="$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/objenesis/objenesis/2.1/objenesis-2.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/easytesting/fest-util/1.2.5/fest-util-1.2.5.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/easytesting/fest-assert-core/2.0M10/fest-assert-core-2.0M10.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-juli/7.0.50/tomcat-juli-7.0.50.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-jdbc/7.0.50/tomcat-jdbc-7.0.50.jar" />
+                            <option value="$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-db/0.7.0/dropwizard-db-0.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-hibernate4/2.3.2/jackson-datatype-hibernate4-2.3.2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jadira/usertype/usertype.spi/3.0.0.GA/usertype.spi-3.0.0.GA.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jadira/usertype/usertype.core/3.0.0.GA/usertype.core-3.0.0.GA.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" />
+                            <option value="$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar" />
+                            <option value="$MAVEN_REPOSITORY$/antlr/antlr/2.7.7/antlr-2.7.7.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.1.Final/hibernate-core-4.3.1.Final.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.13/snakeyaml-1.13.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/liquibase/liquibase-core/3.1.1/liquibase-core-3.1.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/com/mattbertolini/liquibase-slf4j/1.2.1/liquibase-slf4j-1.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.jersey.contribs/jersey-apache-client4/1.18.1/a4dd070edf58f02f2f1b1db1cc23e11f26536c9f/jersey-apache-client4-1.18.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.jersey.contribs/jersey-apache-client4/1.18.1/9dbac6cb2e05715b5b55f92187e7dc52f8c718e1/jersey-apache-client4-1.18.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.1/httpcore-4.3.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.3.2/httpclient-4.3.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.codahale.metrics/metrics-httpclient/3.0.1/ac2b8e1e840822adb8c8a41c18944ec3a3543929/metrics-httpclient-3.0.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.codahale.metrics/metrics-httpclient/3.0.1/4e8b5d43c6e292a051ef86c518af1246152e53a5/metrics-httpclient-3.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.saliman/gradle-cobertura-plugin/1.1.0/d88030159369a709a6cd3162833f83f73060181a/gradle-cobertura-plugin-1.1.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.saliman/gradle-cobertura-plugin/1.1.0/b9eda4b3f3c42153132a2f90e2e1f8ef4f2222a3/gradle-cobertura-plugin-1.1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jfrog.buildinfo/build-info-extractor-gradle/2.0.16/9f4f6fc9e4e1f4d0f8691ab7c3b97177eaae23b5/build-info-extractor-gradle-2.0.16.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jengelman.gradle.plugins/shadow/0.8/20c2ab8ee3e0b23a11206508a5c472d6147ac1fe/shadow-0.8.jar" />
+                            <option value="$MAVEN_REPOSITORY$/asm/asm/3.3.1/asm-3.3.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.9/b70470eb359ebea0bff6525c0bdec37528348ec0/log4j-1.2.9-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.9/55856d711ab8b88f8c7b04fd85ff1643ffbfde7c/log4j-1.2.9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.7.0/e7e30789211e074aa70ef3eaea59bd5b22a7fa7a/ant-launcher-1.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.7.0/58ec0e378f1d33cb72a92ee3a9442909789090db/ant-1.7.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.7.0/9746af1a485e50cf18dcb232489032a847067066/ant-1.7.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/asm/asm-tree/3.3.1/asm-tree-3.3.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.cobertura/cobertura/1.9.4.1/da5e7d36b91f9a182c59ad8718251000afd8c87e/cobertura-1.9.4.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.cobertura/cobertura/1.9.4.1/c72a431cb65bdce793bb147915c2e311941fcb11/cobertura-1.9.4.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ivy/ivy/2.2.0/312527950ad0e8fbab37228fbed3bf41a6fe0a1/ivy-2.2.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ivy/ivy/2.2.0/f9d1e83e82fc085093510f7d2e77d81d52bc2081/ivy-2.2.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/r08/eebfd90866d2c853df4c84aa074d3c977483c3d/guava-r08-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/r08/bbe4bb7c67a3f28bfc7f7022b14db4823b169635/guava-r08.jar" />
+                            <option value="$MAVEN_REPOSITORY$/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.thoughtworks.xstream/xstream/1.3.1/f09156aed20bc9a091d09fb5dff3db97c0c8f059/xstream-1.3.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.thoughtworks.xstream/xstream/1.3.1/c23741bfc42efa760c6acdb90a131814c70aeb8d/xstream-1.3.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.5.1/f8929b5781e6fed2974a866f626787c8ac6fc3e0/jackson-core-asl-1.5.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.5.1/8794be3dc7104e4a1c546e7d2b4076f83977b421/jackson-core-asl-1.5.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.5.1/92cde0023e738557cb1074cb96cb9d0c8bcfdaf0/jackson-mapper-asl-1.5.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.5.1/640ddbef7eae3cc48ca9381c4a1600392c13d6c1/jackson-mapper-asl-1.5.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jfrog.buildinfo/build-info-api/2.0.15/acc421c4849a01806802f3ec349de64f64e4403e/build-info-api-2.0.15.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jfrog.buildinfo/build-info-client/2.0.15/6636509e8e73be542fb93a4267671b72bcaff01a/build-info-client-2.0.15.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jfrog.buildinfo/build-info-extractor/2.0.15/ca7c356bf591bfabb9c0668150c410846422d57b/build-info-extractor-2.0.15.jar" />
+                            <option value="$MAVEN_REPOSITORY$/org/jdom/jdom/1.1/jdom-1.1.jar" />
+                            <option value="$MAVEN_REPOSITORY$/asm/asm-commons/3.3.1/asm-commons-3.3.1.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="dropwizard-example" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/ant-1.9.3.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/ant-launcher-1.9.3.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-base-services-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-base-services-groovy-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-cli-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-core-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-docs-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-launcher-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-messaging-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-native-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-open-api-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-resources-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-tooling-api-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-ui-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/gradle-wrapper-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/groovy-all-1.8.6.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/ivy-2.2.0.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/ant-antlr-1.9.3.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-announce-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-antlr-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-build-comparison-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-build-init-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-code-quality-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-core-impl-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-cpp-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-diagnostics-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-ear-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-ide-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-ivy-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-jacoco-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-javascript-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-jetty-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-language-base-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-language-jvm-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-maven-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-osgi-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-plugins-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-publish-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-reporting-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-scala-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-signing-1.12.jar" />
+                  <option value="/usr/local/Cellar/gradle/1.12/libexec/lib/plugins/gradle-sonar-1.12.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/HelloWorldApplication.groovy" />
+        <option value="$PROJECT_DIR$/src/main/groovy/com/example/helloworld/HelloWorldApplication.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+      </list>
+    </option>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="4" />
+    <option name="y" value="22" />
+    <option name="width" value="1436" />
+    <option name="height" value="878" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dropwizard-example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Tests" />
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dropwizard-example">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dropwizard-example">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.helloworld.auth" />
+      <recent name="com.example.helloworld.resources" />
+      <recent name="com.example.helloworld" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Groovy.gradle:run">
+    <configuration default="false" name="build" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="dropwizard-example" />
+      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="build" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="gradle:migrate" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="dropwizard-example" />
+      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="migrate" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="gradle:run" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="dropwizard-example" />
+      <setting name="path" value="file://$PROJECT_DIR$/build.gradle" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="run" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Groovy.build" />
+      <item index="1" class="java.lang.String" itemvalue="Groovy.gradle:migrate" />
+      <item index="2" class="java.lang.String" itemvalue="Groovy.gradle:run" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Groovy.gradle:run" />
+        <item index="1" class="java.lang.String" itemvalue="Groovy.gradle:migrate" />
+        <item index="2" class="java.lang.String" itemvalue="Groovy.build" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="UPDATE_RUN_STATUS" value="false" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae153c6b-a4de-4b51-8b13-fd217d30e218" name="Default" comment="" />
+      <created>1402587033443</created>
+      <updated>1402587033443</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="4" y="22" width="1436" height="878" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4748924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1155">
+          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="750">
+          <caret line="40" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-core/0.7.0/dropwizard-core-0.7.0.jar!/io/dropwizard/Application.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21216407" vertical-offset="0" max-vertical-offset="707">
+          <caret line="11" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-db/0.7.0/dropwizard-db-0.7.0.jar!/io/dropwizard/db/DatabaseConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12729844" vertical-offset="0" max-vertical-offset="707">
+          <caret line="7" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/com/example/helloworld/HelloWorldApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1020">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45628998" vertical-offset="1436" max-vertical-offset="2040">
+          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI" />
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>groovy-2.3.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>dropwizard-example</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI" />
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: groovy-all-2.3.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI" />
+    </states>
+  </component>
+</project>
+
