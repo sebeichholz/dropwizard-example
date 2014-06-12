@@ -61,6 +61,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                                                               "SUPER SECRET STUFF"));
         environment.jersey().register(new HelloWorldResource(template));
         environment.jersey().register(new ViewResource());
+        environment.jersey().register(new TasksResource());
         environment.jersey().register(new ProtectedResource());
         environment.jersey().register(new PeopleResource(dao));
         environment.jersey().register(new PersonResource(dao));
