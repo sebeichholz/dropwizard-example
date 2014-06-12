@@ -35,6 +35,7 @@ repositories {
 dependencies {
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
+    // obscure groovy compilation error workaround
     compile "com.sun.jersey:jersey-client:1.18.1"
 
 

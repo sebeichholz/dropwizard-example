@@ -5,6 +5,7 @@ import com.example.helloworld.cli.RenderCommand;
 import com.example.helloworld.core.Person;
 import com.example.helloworld.core.Template;
 import com.example.helloworld.db.PersonDAO;
+import com.example.helloworld.db.TaskDAO;
 import com.example.helloworld.health.TemplateHealthCheck;
 import com.example.helloworld.resources.*;
 import io.dropwizard.Application;
@@ -55,13 +56,17 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         final PersonDAO dao = new PersonDAO(hibernateBundle.getSessionFactory());
         final Template template = configuration.buildTemplate();
 
+        final TaskDAO taskdao = new TaskDAO(hibernateBundle.getSessionFactory());
+
         environment.healthChecks().register("template", new TemplateHealthCheck(template));
 
         environment.jersey().register(new BasicAuthProvider<>(new ExampleAuthenticator(),
                                                               "SUPER SECRET STUFF"));
         environment.jersey().register(new HelloWorldResource(template));
         environment.jersey().register(new ViewResource());
-        environment.jersey().register(new TasksResource());
+
+        environment.jersey().register(new TasksResource(taskdao));
+
         environment.jersey().register(new ProtectedResource());
         environment.jersey().register(new PeopleResource(dao));
         environment.jersey().register(new PersonResource(dao));

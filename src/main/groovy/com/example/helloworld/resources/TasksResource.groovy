@@ -1,37 +1,34 @@
-package com.example.helloworld.resources;
+package com.example.helloworld.resources
 
-/* import Person; */
-/* import PersonDAO; */
-/* import io.dropwizard.hibernate.UnitOfWork; */
-/*  */
-import javax.ws.rs.GET;
-/* import javax.ws.rs.POST; */
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-// import java.util.List;
-// import java.util.ArrayList;
+import com.example.helloworld.core.Task
+import com.example.helloworld.db.TaskDAO
+import io.dropwizard.hibernate.UnitOfWork
+
+import javax.ws.rs.GET
+import javax.ws.rs.POST
+import javax.ws.rs.Path
+import javax.ws.rs.Produces
+import javax.ws.rs.core.MediaType
 
 @Path("/tasks")
 @Produces(MediaType.APPLICATION_JSON)
 public class TasksResource {
 
-    /* private final PersonDAO peopleDAO; */
+    private final TaskDAO tasksDAO
 
-    public TasksResource() {
-        // nothing here
+    public TasksResource(TaskDAO tasksDAO) {
+        this.tasksDAO = tasksDAO
     }
 
-    /* @POST */
-    /* @UnitOfWork */
-    /* public Person createPerson(Person person) { */
-    /*     return peopleDAO.create(person); */
-    /* } */
+    @POST
+    @UnitOfWork
+    public Task createTask(Task aTask) {
+        return tasksDAO.create(aTask)
+    }
 
     @GET
-    /* @UnitOfWork */
-    public List<String> listTasks() {
-        ['foo', 'bar', 'baz']
+    @UnitOfWork
+    public List<Task> listTasks() {
+        return tasksDAO.findAll()
     }
-
 }

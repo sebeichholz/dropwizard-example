@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "people")
-@NamedQueries({
+@NamedQueries([
     @NamedQuery(
         name = "Person.findAll",
         query = "SELECT p FROM Person p"
@@ -12,8 +12,7 @@ import javax.persistence.*;
     @NamedQuery(
         name = "Person.findById",
         query = "SELECT p FROM Person p WHERE p.id = :id"
-    )
-})
+    )])
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
