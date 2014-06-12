@@ -128,3 +128,10 @@ task dropAll(dependsOn: 'shadowJar', group: 'dropwizard',  description: "Run dro
         args = ["${shadow.shadowJar.getPath()}", 'db', 'drop-all', 'example.yml', '--confirm-delete-everything']
     }
 }
+
+task status(dependsOn: 'shadowJar', group: 'dropwizard', description: "Show database status") << {
+    javaexec {
+        main = '-jar'
+        args = ["${shadow.shadowJar.getPath()}", 'db', 'status', 'example.yml']
+    }
+}
