@@ -16,6 +16,10 @@ import java.sql.Timestamp
     )
 ])
 public class Task {
+
+    Task(){
+        this.createdAt = new Timestamp((new Date()).getTime())
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id
@@ -31,4 +35,19 @@ public class Task {
 
     @Column(name = 'completed_at')
     Timestamp completedAt
+
+    public getId() {
+        id
+    }
+    public setId(Long anId) {
+        id = anId
+    }
+
+    public String getCreatedAt(){
+        createdAt.toString()
+    }
+
+    public String getCompletedAt(){
+        completedAt ? completedAt.toString() : ""
+    }
 }

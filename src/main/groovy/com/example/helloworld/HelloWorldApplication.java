@@ -3,11 +3,13 @@ package com.example.helloworld;
 import com.example.helloworld.auth.ExampleAuthenticator;
 import com.example.helloworld.cli.RenderCommand;
 import com.example.helloworld.core.Person;
+import com.example.helloworld.core.Task;
 import com.example.helloworld.core.Template;
 import com.example.helloworld.db.PersonDAO;
 import com.example.helloworld.db.TaskDAO;
 import com.example.helloworld.health.TemplateHealthCheck;
 import com.example.helloworld.resources.*;
+import com.google.common.collect.ImmutableList;
 import io.dropwizard.Application;
 //import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.auth.basic.BasicAuthProvider;
@@ -24,7 +26,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     }
 
     private final HibernateBundle<HelloWorldConfiguration> hibernateBundle =
-            new HibernateBundle<HelloWorldConfiguration>(Person.class) {
+            new HibernateBundle<HelloWorldConfiguration>(Person.class, Task.class) {
                 @Override
                 public DataSourceFactory getDataSourceFactory(HelloWorldConfiguration configuration) {
                     return configuration.getDataSourceFactory();
@@ -66,6 +68,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         environment.jersey().register(new ViewResource());
 
         environment.jersey().register(new TasksResource(taskdao));
+        environment.jersey().register(new TaskResource(taskdao));
 
         environment.jersey().register(new ProtectedResource());
         environment.jersey().register(new PeopleResource(dao));
