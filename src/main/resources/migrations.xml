@@ -32,4 +32,9 @@
             <column name="completed_at" type="timestamp"/>
         </createTable>
     </changeSet>
+    <changeSet id="3" author="alex">
+        <addColumn tableName="tasks">
+            <column name="completed" type="boolean" defaultValueBoolean="false"></column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
