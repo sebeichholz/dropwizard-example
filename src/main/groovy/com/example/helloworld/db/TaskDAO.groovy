@@ -22,6 +22,10 @@ class TaskDAO extends AbstractDAO<Task>{
         return persist(aTask)
     }
 
+    public void destroy(Task aTask) {
+        currentSession().delete(aTask)
+    }
+
     public List<Task> findAll(){
         return list(namedQuery("Task.findAll"))
     }

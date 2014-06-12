@@ -7,6 +7,7 @@ import com.sun.jersey.api.NotFoundException
 import io.dropwizard.hibernate.UnitOfWork
 import io.dropwizard.jersey.params.LongParam
 
+import javax.ws.rs.DELETE
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.PathParam
@@ -28,14 +29,20 @@ public class TaskResource {
     @GET
     @UnitOfWork
     public Task getTask(@PathParam("taskId") LongParam taskId) {
-        return findSafely(taskId.get())
+        withFoundTask(taskId.get()) { it }
     }
 
-    private Task findSafely(long taskId){
+    @DELETE
+    @UnitOfWork
+    public deleteTask(@PathParam("taskId") LongParam taskId){
+        withFoundTask(taskId.get()) { tasksDAO.destroy(it) }
+    }
+
+    private Task withFoundTask(long taskId, Closure yield){
         final Optional<Task> task = tasksDAO.findById(taskId)
         if (!task.isPresent()){
             throw new NotFoundException("No such task.")
         }
-        return task.get()
+        return yield(task.get())
     }
 }
