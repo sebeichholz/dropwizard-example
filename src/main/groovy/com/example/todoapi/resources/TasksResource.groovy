@@ -31,4 +31,11 @@ public class TasksResource {
     public List<Task> listTasks() {
         return tasksDAO.findAll()
     }
+
+    @Path("/completed")
+    @GET
+    @UnitOfWork
+    public List<Task> listCompletedTasks(){
+        return tasksDAO.findCompletedTasks()
+    }
 }

@@ -1,9 +1,11 @@
 package com.example.todoapi.db
 
 import com.example.todoapi.core.Task
+import com.google.common.base.Optional
 import io.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory
-import com.google.common.base.Optional
+
+import javax.persistence.Table
 
 /**
  * Created by orca on 13/06/2014.
@@ -26,15 +28,16 @@ class TaskDAO extends AbstractDAO<Task>{
         currentSession().delete(aTask)
     }
 
-    public Task update(Map args){
-        def task = args.task
-        def params = args.with
-
-        params.each { k, v ->
+    public Task updateWithAttributes(Task task, Map attrs){
+        attrs.each { k, v ->
             if (['name','description','completed'].any { it.equals(k)}) task.putAt(k,v)
         }
+        return task
     }
     public List<Task> findAll(){
         return list(namedQuery("Task.findAll"))
+    }
+    public List<Task> findCompletedTasks(){
+        return list(namedQuery("Task.completed"))
     }
 }

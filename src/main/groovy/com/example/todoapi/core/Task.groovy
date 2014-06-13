@@ -1,28 +1,34 @@
 package com.example.todoapi.core
 
+import org.eclipse.jetty.util.annotation.Name
+
 import javax.persistence.*
 import java.sql.Timestamp
 
 @Entity
 @Table(name = "tasks")
 @NamedQueries([
-    @NamedQuery(
-            name = 'Task.findAll',
-            query = "SELECT p FROM Task p"
-    ),
-    @NamedQuery(
-            name = "Task.findById",
-            query = "SELECT p FROM Task p WHERE p.id = :id"
-    )
+        @NamedQuery(
+                name = 'Task.findAll',
+                query = "SELECT p FROM Task p"
+        ),
+        @NamedQuery(
+                name = "Task.findById",
+                query = "SELECT p FROM Task p WHERE p.id = :id"
+        ),
+        @NamedQuery(
+                name = "Task.completed",
+                query = "SELECT p FROM Task p WHERE p.completed = true"
+        )
 ])
 public class Task {
 
-    static Timestamp currentTimestamp(){
+    static Timestamp currentTimestamp() {
         new Timestamp((new Date()).getTime())
     }
 
     //FIXME: createdAt is reset on every update
-    Task(){
+    Task() {
         this.createdAt = currentTimestamp()
     }
 
@@ -48,19 +54,20 @@ public class Task {
     public getId() {
         id
     }
+
     public setId(Long anId) {
         id = anId
     }
 
-    public String getCreatedAt(){
+    public String getCreatedAt() {
         createdAt.toString()
     }
 
-    public String getCompletedAt(){
+    public String getCompletedAt() {
         completedAt ? completedAt.toString() : ""
     }
 
-    public setCompleted(newCompleted){
+    public setCompleted(newCompleted) {
         if (completed && !newCompleted) this.completedAt = null
         if (!completed && newCompleted) this.completedAt = currentTimestamp()
 
