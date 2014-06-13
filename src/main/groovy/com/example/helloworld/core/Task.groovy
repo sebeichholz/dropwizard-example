@@ -17,9 +17,15 @@ import java.sql.Timestamp
 ])
 public class Task {
 
-    Task(){
-        this.createdAt = new Timestamp((new Date()).getTime())
+    static Timestamp currentTimestamp(){
+        new Timestamp((new Date()).getTime())
     }
+
+    //FIXME: createdAt is reset on every update
+    Task(){
+        this.createdAt = currentTimestamp()
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id
@@ -36,6 +42,9 @@ public class Task {
     @Column(name = 'completed_at')
     Timestamp completedAt
 
+    @Column(name = 'completed')
+    boolean completed
+
     public getId() {
         id
     }
@@ -49,5 +58,12 @@ public class Task {
 
     public String getCompletedAt(){
         completedAt ? completedAt.toString() : ""
+    }
+
+    public setCompleted(newCompleted){
+        if (completed && !newCompleted) this.completedAt = null
+        if (!completed && newCompleted) this.completedAt = currentTimestamp()
+
+        this.completed = newCompleted
     }
 }

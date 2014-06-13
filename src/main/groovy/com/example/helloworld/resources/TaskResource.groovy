@@ -6,9 +6,11 @@ import com.google.common.base.Optional
 import com.sun.jersey.api.NotFoundException
 import io.dropwizard.hibernate.UnitOfWork
 import io.dropwizard.jersey.params.LongParam
+import org.hibernate.engine.spi.QueryParameters
 
 import javax.ws.rs.DELETE
 import javax.ws.rs.GET
+import javax.ws.rs.PUT
 import javax.ws.rs.Path
 import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
@@ -29,7 +31,7 @@ public class TaskResource {
     @GET
     @UnitOfWork
     public Task getTask(@PathParam("taskId") LongParam taskId) {
-        withFoundTask(taskId.get()) { it }
+        withFoundTask(taskId) { it }
     }
 
     @DELETE
@@ -38,8 +40,13 @@ public class TaskResource {
         withFoundTask(taskId.get()) { tasksDAO.destroy(it) }
     }
 
-    private Task withFoundTask(long taskId, Closure yield){
-        final Optional<Task> task = tasksDAO.findById(taskId)
+    @PUT
+    @UnitOfWork
+    public updateTask(@PathParam("taskId") LongParam taskId, Map params){
+        withFoundTask(taskId) { tasksDAO.update(task:it, with:params) }
+    }
+    private Task withFoundTask(LongParam taskId, Closure yield){
+        final Optional<Task> task = tasksDAO.findById(taskId.get())
         if (!task.isPresent()){
             throw new NotFoundException("No such task.")
         }

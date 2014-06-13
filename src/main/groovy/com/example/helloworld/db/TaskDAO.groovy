@@ -26,6 +26,14 @@ class TaskDAO extends AbstractDAO<Task>{
         currentSession().delete(aTask)
     }
 
+    public Task update(Map args){
+        def task = args.task
+        def params = args.with
+
+        params.each { k, v ->
+            if (['name','description','completed'].any { it.equals(k)}) task.putAt(k,v)
+        }
+    }
     public List<Task> findAll(){
         return list(namedQuery("Task.findAll"))
     }
