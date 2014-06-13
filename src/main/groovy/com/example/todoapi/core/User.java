@@ -1,4 +1,4 @@
-package com.example.helloworld.core;
+package com.example.todoapi.core;
 
 public class User {
     private final String name;

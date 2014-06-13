@@ -1,12 +1,11 @@
-package com.example.helloworld.resources
+package com.example.todoapi.resources
 
-import com.example.helloworld.core.Task
-import com.example.helloworld.db.TaskDAO
+import com.example.todoapi.core.Task
+import com.example.todoapi.db.TaskDAO
 import com.google.common.base.Optional
 import com.sun.jersey.api.NotFoundException
 import io.dropwizard.hibernate.UnitOfWork
 import io.dropwizard.jersey.params.LongParam
-import org.hibernate.engine.spi.QueryParameters
 
 import javax.ws.rs.DELETE
 import javax.ws.rs.GET

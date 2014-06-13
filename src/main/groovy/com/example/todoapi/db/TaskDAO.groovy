@@ -1,6 +1,6 @@
-package com.example.helloworld.db
+package com.example.todoapi.db
 
-import com.example.helloworld.core.Task
+import com.example.todoapi.core.Task
 import io.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory
 import com.google.common.base.Optional

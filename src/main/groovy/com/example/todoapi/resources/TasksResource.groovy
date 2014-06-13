@@ -1,7 +1,7 @@
-package com.example.helloworld.resources
+package com.example.todoapi.resources
 
-import com.example.helloworld.core.Task
-import com.example.helloworld.db.TaskDAO
+import com.example.todoapi.core.Task
+import com.example.todoapi.db.TaskDAO
 import io.dropwizard.hibernate.UnitOfWork
 
 import javax.ws.rs.GET

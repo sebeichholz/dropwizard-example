@@ -1,4 +1,4 @@
-package com.example.helloworld.core
+package com.example.todoapi.core
 
 import javax.persistence.*
 import java.sql.Timestamp

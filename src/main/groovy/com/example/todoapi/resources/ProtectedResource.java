@@ -1,6 +1,6 @@
-package com.example.helloworld.resources;
+package com.example.todoapi.resources;
 
-import com.example.helloworld.core.User;
+import com.example.todoapi.core.User;
 import io.dropwizard.auth.Auth;
 
 import javax.ws.rs.GET;

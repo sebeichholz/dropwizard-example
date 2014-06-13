@@ -1,6 +1,6 @@
-package com.example.helloworld.auth;
+package com.example.todoapi.auth;
 
-import com.example.helloworld.core.User;
+import com.example.todoapi.core.User;
 import com.google.common.base.Optional;
 import io.dropwizard.auth.AuthenticationException;
 import io.dropwizard.auth.Authenticator;

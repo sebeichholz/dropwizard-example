@@ -1,6 +1,6 @@
-package com.example.helloworld;
+package com.example.todoapi;
 
-import com.example.helloworld.core.Template;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class HelloWorldConfiguration extends Configuration {
+public class TodoApiConfiguration extends Configuration {
     @NotEmpty
     private String template;
 
@@ -38,10 +38,6 @@ public class HelloWorldConfiguration extends Configuration {
     @JsonProperty
     public void setDefaultName(String defaultName) {
         this.defaultName = defaultName;
-    }
-
-    public Template buildTemplate() {
-        return new Template(template, defaultName);
     }
 
     @JsonProperty("database")
