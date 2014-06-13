@@ -40,4 +40,7 @@ class TaskDAO extends AbstractDAO<Task>{
     public List<Task> findCompletedTasks(){
         return list(namedQuery("Task.completed"))
     }
+    public List<Task> findIncompleteTasks(){
+        return list(namedQuery("Task.incomplete"))
+    }
 }

@@ -19,6 +19,10 @@ import java.sql.Timestamp
         @NamedQuery(
                 name = "Task.completed",
                 query = "SELECT p FROM Task p WHERE p.completed = true"
+        ),
+        @NamedQuery(
+                name = "Task.incomplete",
+                query = "SELECT p FROM Task p WHERE p.completed = false"
         )
 ])
 public class Task {
